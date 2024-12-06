@@ -62,7 +62,7 @@ function getMDXData(dir: string) {
 }
 
 function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), "src", "app", "blog", "posts"));
+  return getMDXData(path.join(process.cwd(), "src", "app", "content", "posts"));
 }
 
 function formatDate(date: string, includeRelative = false) {
