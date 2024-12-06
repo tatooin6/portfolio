@@ -43,7 +43,7 @@ const Footer = () => {
         </li>
       </ul>
       <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        � {new Date().getFullYear()} MIT Licensed
+        &copy; {new Date().getFullYear()} MIT Licensed
       </p>
     </footer>
   );
