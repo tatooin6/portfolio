@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import Script from 'next/script';
 import { formatDate, getBlogPosts } from "../utils";
 import { baseUrl } from '../../sitemap';
-import { Metadata } from "next";
 import CustomMDX from "@/app/components/CustomMDX";
 
 interface BlogParams { params: { slug: string } };
@@ -62,7 +63,7 @@ export default function Blog({params}: BlogParams) {
 
   return (
     <section>
-      <script
+      <Script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
@@ -78,8 +79,8 @@ export default function Blog({params}: BlogParams) {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
-              '@type': 'Person',
-              name: 'My Portfolio',
+              '@type': 'Tato',
+              name: `Tato's Portfolio`,
             },
           }),
         }}
