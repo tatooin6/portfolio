@@ -64,6 +64,7 @@ export default function Blog({params}: BlogParams) {
   return (
     <section>
       <Script
+        id="blog-post-schema"
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
