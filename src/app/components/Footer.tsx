@@ -17,7 +17,7 @@ function ArrowIcon() {
 
 const Footer = () => {
   return (
-    <footer className="mb-16">
+    <footer className="mb-1 flex flex-row justify-between">
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
@@ -27,7 +27,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/antonio-pantoja-382b1a189/"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">Linked In</p>
+            <p className="ml-2 h-7">LinkedIn</p>
           </a>
         </li>
         <li>

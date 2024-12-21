@@ -1,29 +1,29 @@
-# Descripción del cambio
+# Description of change
 
-Por favor describe brevemente los cambios realizados en este Pull Request (PR). Indica si se trata de una nueva funcionalidad, corrección de errores, mejora de diseño o algo más.
+Please briefly describe the changes made in this Pull Request (PR). Indicate whether it is a new feature, bug fix, design improvement, or something else.
 
-- **Tipo de cambio:** (Marca con una "x" lo que corresponda)
-  - [ ] Nueva funcionalidad
-  - [ ] Corrección de errores (bug fix)
-  - [ ] Mejora en el diseño o estilo
-  - [ ] Otro (especificar):
+- **Type of change:** (Mark with an "x" what applies)
+- [ ] New feature
+- [ ] Bug fix
+- [ ] Design or style improvement
+- [ ] Other (specify):
 
 ---
 
 # Checklist
 
-Marca con una "x" si has completado los siguientes pasos antes de solicitar la revisión:
+Mark with an "x" if you have completed the following steps before requesting the review:
 
-- [ ] Los cambios fueron probados y funcionan como se esperaba.
-- [ ] El código sigue los estándares de calidad definidos para el proyecto.
-- [ ] Los cambios no introducen errores en otras partes del proyecto.
-- [ ] La documentación relevante (si aplica) fue actualizada.
+- [ ] The changes were tested and work as expected.
+- [ ] The code follows the quality standards defined for the project.
+- [ ] The changes do not introduce errors in other parts of the project.
+- [ ] The relevant documentation (if applicable) was updated.
 
 ---
 
-# Cambios realizados
+# Changes made
 
-Describe con más detalle lo que se implementó o corrigió en este PR:
+Describe in more detail what was implemented or fixed in this PR:
 
 1. ...
 2. ...
@@ -31,9 +31,9 @@ Describe con más detalle lo que se implementó o corrigió en este PR:
 
 ---
 
-# Cómo probarlo
+# How to test it
 
-Instrucciones para que otros puedan verificar los cambios realizados. Indica comandos, pasos o links, si es necesario.
+Instructions so others can verify the changes you made. Provide commands, steps, or links, if necessary.
 
 1. ...
 2. ...
@@ -41,12 +41,12 @@ Instrucciones para que otros puedan verificar los cambios realizados. Indica com
 
 ---
 
-# Evidencia (opcional)
+# Evidence (optional)
 
-Si corresponde, incluye capturas de pantalla, videos o links que respalden tus cambios. Esto es especialmente útil para cambios visuales o funcionales.
+If applicable, include screenshots, videos, or links that support your changes. This is especially useful for visual or functional changes.
 
 ---
 
-# Notas adicionales (opcional)
+# Additional notes (optional)
 
-Si tienes información adicional que quieras compartir, inclúyela aquí.
+If you have additional information you'd like to share, please include it here.
