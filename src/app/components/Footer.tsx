@@ -17,7 +17,7 @@ function ArrowIcon() {
 
 const Footer = () => {
   return (
-    <footer className="mb-1 flex flex-row justify-between">
+    <footer className="mb-1 flex flex-row justify-between px-2">
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
