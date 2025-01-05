@@ -81,7 +81,7 @@ export default function Blog({params}: BlogParams) {
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               '@type': 'Tato',
-              name: `Tato's Portfolio`,
+              name: `Tato Portfolio`,
             },
           }),
         }}
