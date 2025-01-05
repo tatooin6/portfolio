@@ -6,8 +6,8 @@ export default function Home() {
         <p className="text-xl lg:static flex w-full justify-start bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Full Stack Web Developer & Educator
         </p> 
-        <p className="pb-4">Experienced Full Stack Web Developer & Educator with
-           a passion for efficient solutions and sharing technical expertise.</p>
+        <p className="pb-4">Experienced professional with a passion for efficient 
+          solutions and sharing technical expertise.</p>
       </div>
     </main>
   );
