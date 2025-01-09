@@ -8,6 +8,9 @@ const navItems = {
   "/blog": {
     name: "blog",
   },
+  "/about": {
+    name: "about",
+  },
 };
 
 const Navbar = () => {
