@@ -1,9 +1,10 @@
 import React from 'react'
 import Badge from '../components/common/Badge';
+import { badgeColor } from '../components/common/Badge';
 
 const About = () => {
   return (
-    <div className='px-2 w-full flex lg:flex-row flex-col'>
+    <div className='px-2 w-full flex lg:flex-row flex-col dark:text-gray-200'>
       <div className='lg:w-1/2 w-full p-2'>
         <h1 className='text-xl pb-6 pt-8'>Get to know me</h1>
         <p>
@@ -23,7 +24,7 @@ const About = () => {
         <h1 className='text-xl pb-6 pt-8'>Skills</h1>
 
         <div>
-          <Badge tag='Languages' />
+          <Badge tag='Languages' color={badgeColor.red}/>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="badge">JavaScript</span>
             <span className="badge">TypeScript</span>
@@ -35,7 +36,7 @@ const About = () => {
         </div>
 
         <div className="mt-6">
-          <Badge tag='Frameworks & Libraries' />
+          <Badge tag='Frameworks & Libraries' color={badgeColor.purple}/>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="badge">ReactJS</span>
             <span className="badge">Next.js</span>
@@ -45,7 +46,7 @@ const About = () => {
         </div>
 
         <div className="mt-6">
-          <Badge tag='Databases' />
+          <Badge tag='Databases' color={badgeColor.yellow}/>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="badge">MySQL</span>
             <span className="badge">PostgreSQL</span>
@@ -54,7 +55,7 @@ const About = () => {
         </div>
 
         <div className="mt-6">
-          <Badge tag='Cloud & DevOps' />
+          <Badge tag='Cloud & DevOps' color={badgeColor.indigo}/>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="badge">Docker</span>
             <span className="badge">Azure DevOps</span>
@@ -63,7 +64,7 @@ const About = () => {
         </div>
 
         <div className="mt-6">
-          <Badge tag='Design' />
+          <Badge tag='Design' color={badgeColor.blue} />
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="badge">Atomic Design</span>
             <span className="badge">UI/UX Design</span>
@@ -72,7 +73,7 @@ const About = () => {
         </div>
 
         <div className="mt-6">
-          <Badge tag='Tools' />
+          <Badge tag='Tools' color={badgeColor.green}/>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="badge">SourceTree</span>
             <span className="badge">SAP Business One</span>
