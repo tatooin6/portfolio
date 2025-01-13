@@ -1,4 +1,38 @@
 import React from 'react'
+import {
+  BiLogoTypescript,
+  BiLogoJavascript,
+  BiLogoPython,
+  BiLogoHtml5,
+  BiLogoCss3,
+} from "react-icons/bi";
+import { TbBrandCSharp } from "react-icons/tb";
+import { BsFiletypeScss } from "react-icons/bs";
+import {
+  RiReactjsFill,
+  RiNextjsFill,
+  RiNodejsFill,
+  RiTailwindCssFill,
+} from "react-icons/ri";
+import {
+  SiDotnet,
+  SiMysql,
+  SiPostgresql,
+  SiMongodb,
+  SiDocker,
+  SiSourcetree,
+  SiSap,
+  SiGnubash,
+} from "react-icons/si";
+import { VscAzureDevops } from "react-icons/vsc";
+import { IoLogoGitlab } from "react-icons/io5";
+import {
+  DiAtom,
+  DiPhotoshop,
+} from "react-icons/di";
+import { MdOutlineDesignServices } from "react-icons/md";
+import Icon from '../components/common/Icon';
+
 import Badge from '../components/common/Badge';
 import { badgeColor } from '../components/common/Badge';
 
@@ -24,60 +58,62 @@ const About = () => {
         <h1 className='text-xl pb-6 pt-8'>Skills</h1>
 
         <div>
-          <Badge tag='Languages' color={badgeColor.red}/>
+          <Badge tag='Languages' color={badgeColor.red} />
           <div className="flex flex-wrap gap-2 mt-2">
-            <span className="badge">JavaScript</span>
-            <span className="badge">TypeScript</span>
-            <span className="badge">C#</span>
-            <span className="badge">Python</span>
-            <span className="badge">HTML5</span>
-            <span className="badge">CSS/SCSS</span>
+            <Icon icon={BiLogoJavascript} description='Javascript' />
+            <Icon icon={BiLogoTypescript} description='Typescript' />
+            <Icon icon={TbBrandCSharp} description='C#' />
+            <Icon icon={BiLogoPython} description='Python' />
+            <Icon icon={BiLogoHtml5} description='HTML5' />
+            <Icon icon={BiLogoCss3} description='CSS3' />
+            <Icon icon={BsFiletypeScss} description='SCSS' />
           </div>
         </div>
 
         <div className="mt-6">
-          <Badge tag='Frameworks & Libraries' color={badgeColor.purple}/>
+          <Badge tag='Frameworks & Libraries' color={badgeColor.purple} />
           <div className="flex flex-wrap gap-2 mt-2">
-            <span className="badge">ReactJS</span>
-            <span className="badge">Next.js</span>
-            <span className="badge">Node.js</span>
-            <span className="badge">.NET Core</span>
+            <Icon icon={RiReactjsFill} description='ReactJS' />
+            <Icon icon={RiNextjsFill} description='NextJS' />
+            <Icon icon={RiNodejsFill} description='NodeJS' />
+            <Icon icon={RiTailwindCssFill} description='TailwindCSS' />
+            <Icon icon={SiDotnet} description='.NET Core' />
           </div>
         </div>
 
         <div className="mt-6">
-          <Badge tag='Databases' color={badgeColor.yellow}/>
+          <Badge tag='Databases' color={badgeColor.yellow} />
           <div className="flex flex-wrap gap-2 mt-2">
-            <span className="badge">MySQL</span>
-            <span className="badge">PostgreSQL</span>
-            <span className="badge">MongoDB</span>
+            <Icon icon={SiMysql} description='MySQL' />
+            <Icon icon={SiPostgresql} description='PostgreSQL' />
+            <Icon icon={SiMongodb} description='MongoDB' />
           </div>
         </div>
 
         <div className="mt-6">
-          <Badge tag='Cloud & DevOps' color={badgeColor.indigo}/>
+          <Badge tag='Cloud & DevOps' color={badgeColor.indigo} />
           <div className="flex flex-wrap gap-2 mt-2">
-            <span className="badge">Docker</span>
-            <span className="badge">Azure DevOps</span>
-            <span className="badge">CI/CD Pipelines</span>
+            <Icon icon={SiDocker} description='Docker' />
+            <Icon icon={VscAzureDevops} description='Azure DevOps' />
+            <Icon icon={IoLogoGitlab} description='Gitlab CI/CD Pipelines' />
           </div>
         </div>
 
         <div className="mt-6">
           <Badge tag='Design' color={badgeColor.blue} />
           <div className="flex flex-wrap gap-2 mt-2">
-            <span className="badge">Atomic Design</span>
-            <span className="badge">UI/UX Design</span>
-            <span className="badge">Adobe Photoshop</span>
+            <Icon icon={DiAtom} description='Atomic Design' />
+            <Icon icon={MdOutlineDesignServices} description='UI/UX Design' />
+            <Icon icon={DiPhotoshop} description='Adobe Photoshop' />
           </div>
         </div>
 
         <div className="mt-6">
-          <Badge tag='Tools' color={badgeColor.green}/>
+          <Badge tag='Tools' color={badgeColor.green} />
           <div className="flex flex-wrap gap-2 mt-2">
-            <span className="badge">SourceTree</span>
-            <span className="badge">SAP Business One</span>
-            <span className="badge">Bash Scripts</span>
+            <Icon icon={SiSourcetree} description='SourceTree' />
+            <Icon icon={SiSap} description='SAP Business One' />
+            <Icon icon={SiGnubash} description='Bash Scripts' />
           </div>
         </div>
       </div>
