@@ -5,11 +5,11 @@ const navItems = {
   "/": {
     name: "home",
   },
-  "/blog": {
-    name: "blog",
-  },
   "/about": {
     name: "about",
+  },
+  "/blog": {
+    name: "blog",
   },
 };
 
@@ -35,8 +35,8 @@ const Navbar = () => {
             })}
           </div>
           <div className="flex flex-row items-center justify-end px-2">
-              <ThemeSwitcher />
-            </div>
+            <ThemeSwitcher />
+          </div>
         </nav>
       </div>
     </aside>
