@@ -1,0 +1,34 @@
+[
+  {
+    "startDate": "2024-08-01",
+    "endDate": "2024-11-30",
+    "title": "Full-Stack Developer",
+    "company": "Agencia Boliviana Espacial (Bolivian Space Agency)",
+    "summary": "Developed geospatial platforms and satellite data visualization tools using modern web technologies.",
+    "extendedDescription": "Implemented a geospatial platform using Angular 12 and NodeJS, optimizing urban planning and decision-making processes. Developed tools for visualizing satellite data with ReactJS and managed Geoserver instances for publishing images and layers. Automated satellite image downloads with Bash and Python, deploying scripts using Docker."
+  },
+  {
+    "startDate": "2021-07-01",
+    "endDate": "2024-01-31",
+    "title": "Core Developer of Low-Code Framework",
+    "company": "Jalasoft",
+    "summary": "Contributed to building and maintaining a low-code framework, enabling simplified software creation.",
+    "extendedDescription": "Developed and maintained a low-code framework using TypeScript, KnockoutJS, and KendoUI to facilitate software creation without advanced technical knowledge. Implemented automated testing with C#, Selenium, and .NET Core in a SCRUM environment. Managed versioning and CI/CD pipelines using Git and Azure DevOps."
+  },
+  {
+    "startDate": "2021-04-01",
+    "endDate": "2021-07-31",
+    "title": "Frontend Developer for Interview Management Platform",
+    "company": "Jalasoft",
+    "summary": "Led the frontend development of an interview management platform leveraging modern React techniques.",
+    "extendedDescription": "Led the frontend development of a platform for managing technical interviews using ReactJS and Redux. Implemented advanced routing, atomic design principles, and automated deployment on a VPS using Docker and GitLab CI/CD. Designed and developed REST APIs for proof of concept and contributed to the global UI/UX design."
+  },
+  {
+    "startDate": "2019-09-01",
+    "endDate": "2020-12-31",
+    "title": "POS System Developer",
+    "company": "Exxis",
+    "summary": "Collaborated on developing a POS system integrated with SAP Business One for ERP simplification.",
+    "extendedDescription": "Developed a POS system integrated with SAP Business One, simplifying ERP operations for non-experienced users. Implemented RESTful APIs using PHP (Yii framework) to ensure efficient backend communication."
+  }
+]

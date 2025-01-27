@@ -11,6 +11,9 @@ const navItems = {
   "/blog": {
     name: "blog",
   },
+  "/experience": {
+    name: "experience",
+  },
 };
 
 const Navbar = () => {
