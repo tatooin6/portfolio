@@ -18,7 +18,9 @@ export default function Home() {
           Experienced professional with a passion for efficient solutions and
           sharing technical expertise.
         </p>
-        <DownloadFileButton />
+        <div className="pt-4">
+          <DownloadFileButton />
+        </div>
       </div>
     </main>
   );
