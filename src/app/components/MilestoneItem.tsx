@@ -5,12 +5,17 @@ import { Milestone } from "./Timeline";
 import { MdExpandMore, MdExpandLess, MdArrowForward } from "react-icons/md";
 import { titleFormat } from "@/utils/dateUtils";
 
-const MilestoneItem = ({ milestone }: { milestone: Milestone }) => {
+interface MilestoneItemProps {
+  milestone: Milestone;
+  isLast: boolean;
+}
+
+const MilestoneItem = ({ milestone, isLast }: MilestoneItemProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div key={milestone.company}>
-      <li className="mb-10 ms-4">
+      <li className={`${isLast ? "" : "mb-10"} ms-4`}>
         <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-gray-700 dark:border-white dark:bg-gray-700"></div>
         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
           <div className="flex flex-row">
