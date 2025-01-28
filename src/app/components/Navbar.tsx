@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import ThemeSwitcher from './common/ThemeSwitcher';
+import ThemeSwitcher from "./common/ThemeSwitcher";
+import { usePathname } from "next/navigation";
 
 const navItems = {
   "/": {
@@ -17,6 +20,8 @@ const navItems = {
 };
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-0 px-1">
@@ -26,13 +31,23 @@ const Navbar = () => {
         >
           <div className="flex flex-row space-x-0 pr-10">
             {Object.entries(navItems).map(([path, { name }]) => {
+              const isActive = pathname === path;
               return (
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-gray-400 dark:text-gray-200 flex align-middle relative py-1 px-2 m-1"
+                  className={`${isActive ? "" : "text-gray-500 hover:text-blue-500"} transition-all hover:text-neutral-800 dark:hover:text-gray-400 dark:text-gray-200 flex align-middle relative py-1 px-2 m-1`}
                 >
-                  {name}
+                  <span
+                    className={`relative px-[1px] transition-all duration-300 ${
+                      isActive
+                        ? "bg-blue-500 text-white rounded-sm"
+                        : "hover:bg-blue-300 hover:text-white"
+                    }`}
+                  >
+                    {name[0]}
+                  </span>
+                  {name.slice(1)}
                 </Link>
               );
             })}
