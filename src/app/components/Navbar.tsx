@@ -36,13 +36,13 @@ const Navbar = () => {
                 <Link
                   key={path}
                   href={path}
-                  className={`${isActive ? "" : "text-gray-500 hover:text-blue-500"} transition-all hover:text-neutral-800 dark:hover:text-gray-400 dark:text-gray-200 flex align-middle relative py-1 px-2 m-1`}
+                  className={`${isActive ? "" : "text-gray-500 hover:text-blue-500"} transition-all hover:text-neutral-800 dark:hover:text-[#9ece6a] dark:text-[#bb9af7] flex align-middle relative py-1 px-2 m-1`}
                 >
                   <span
                     className={`relative px-[1px] transition-all duration-300 ${
                       isActive
-                        ? "bg-blue-500 text-white rounded-sm"
-                        : "hover:bg-blue-300 hover:text-white"
+                        ? "bg-[#9ece6a] text-[#24283b] rounded-sm"
+                        : "hover:bg-[#24283b] hover:text-[#9ece6a]"
                     }`}
                   >
                     {name[0]}
