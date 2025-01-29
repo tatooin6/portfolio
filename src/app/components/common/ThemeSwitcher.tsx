@@ -13,7 +13,7 @@ const ThemeSwitcher = () => {
     }
 
     return (
-        <div className='dark:text-gray-200'>
+        <div className='dark:text-[#bb9af7]'>
             <button onClick={() => darkModeHandler()}>
                 {
                     dark && <IoSunny />
