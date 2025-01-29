@@ -77,7 +77,7 @@ const About = () => {
             free to reach out. I&apos;d love to connect!
           </p>
           {!isExpanded && (
-            <div className="absolute bottom-0 left-0 w-full h-16 pointer-events-none bg-gradient-to-t from-[rgb(228,228,228)] to-transparent dark:from-[rgb(30,58,138)] dark:to-transparent"></div>
+            <div className="absolute bottom-0 left-0 w-full h-16 pointer-events-none bg-gradient-to-t from-[rgb(228,228,228)] to-transparent dark:from-[rgb(36,40,59)] dark:to-transparent"></div>
           )}
         </div>
         <div className="flex flex-row justify-center">
