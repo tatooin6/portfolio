@@ -62,7 +62,7 @@ export default function Blog({params}: BlogParams) {
   if (!post) notFound();
 
   return (
-    <section>
+    <section className="px-4">
       <Script
         id="blog-post-schema"
         type="application/ld+json"
@@ -90,7 +90,7 @@ export default function Blog({params}: BlogParams) {
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm dark:text-neutral-300">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>

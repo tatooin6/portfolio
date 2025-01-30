@@ -1,0 +1,198 @@
+---
+title: 'Design Patterns in JavaScript and TypeScript: A Practical Guide'
+publishedAt: '2025-01-29'
+summary: 'Explore essential design patterns in JavaScript and TypeScript, from Singleton to Observer, with real-world examples to improve your software architecture.'
+---
+
+# Design Patterns in JavaScript and TypeScript
+
+### Introduction
+
+Design Patterns are reusable solutions to common problems in software development. I like to see them as useful recipes for particular meal parties. What is important here is to have always in mind that in Typescript, these patterns help us to write structured, maintainable and efficient code. 
+
+In this short blog I want to show what I have explored on some of the types of design patterns along with examples: 
+
+- Creational
+- Structural
+- Behavioral
+
+## Creational Patterns
+
+Creational patterns focus on creating objects efficiently and flexibly.
+
+### Singleton
+
+The Singleton pattern ensures that a class has only one instance and provides a global access point to it.
+
+```typescript
+class Singleton {
+  private static instance: Singleton;
+
+  private constructor() {} // avoid creating new instances
+
+  static getInstance(): Singleton {
+    if (!Singleton.instance) {
+      Singleton.instance = new Singleton();
+    }
+    return Singleton.instance;
+  }
+}
+
+const instance1 = Singleton.getInstance();
+const instance2 = Singleton.getInstance();
+console.log(instance1 === instance2); // true
+```
+
+### Factory Method
+
+This patterns allows us to create objects without specifying an exact class that should be instantiated.
+
+```typescript
+class Car {
+  constructor(public model: string) {}
+}
+
+class CarFactory {
+  static createCar(model: string): Car {
+    return new Car(model);
+  }
+}
+
+const myCar = CarFactory.createCar("Toyota");
+console.log(myCar);
+```
+
+## Structural Patterns
+
+These patterns focus on how to organize classes and objects to improve code flexibility.
+
+### Decorator
+
+This is one of my personal favorite patterns. This pattern allows to add functionality to an object without modify its structure!
+
+```typescript
+class BasicCar {
+  getDescription() {
+    return "Basic Car";
+  }
+}
+
+class CarWithGPS {
+  constructor(private car: BasicCar) {}
+
+  getDescription() {
+    return `${this.car.getDescription()} with GPS`;
+  }
+}
+
+const car = new BasicCar();
+const carWithGPS = new CarWithGPS(car);
+console.log(carWithGPS.getDescription()); // "Basic Car with GPS"
+```
+
+### Adaptador
+
+It can transform an interface into another so it is possible that two incompatible systems can work together.
+
+```typescript
+class OldSystem {
+  getData() {
+    return "Old Data";
+  }
+}
+
+class Adapter {
+  constructor(private oldSystem: OldSystem) {}
+
+  getFormattedData() {
+    return `New Format: ${this.oldSystem.getData()}`;
+  }
+}
+
+const adapter = new Adapter(new OldSystem());
+console.log(adapter.getFormattedData());
+```
+
+## Behavioral Patterns
+
+Unlike the previous ones, these patterns focus on communicate between objects and assignment of responsibilities.
+
+### Observer
+
+This pattern defines a dependency one-to-many between objects, this allows that changes in an object are reflected in another automatically. A lot of frameworks use this pattern in their binding system.
+
+```typescript
+class Subject {
+  private observers: Array<(data: string) => void> = [];
+
+  subscribe(observer: (data: string) => void) {
+    this.observers.push(observer);
+  }
+
+  notify(data: string) {
+    this.observers.forEach(observer => observer(data));
+  }
+}
+
+const subject = new Subject();
+subject.subscribe(data => console.log(`Observer 1: ${data}`));
+subject.subscribe(data => console.log(`Observer 2: ${data}`));
+
+subject.notify("Dispatch Event");
+```
+
+### Command
+
+This pattern encapsulates a request into an object, this allows parameterization of actions.
+
+```typescript
+class Command {
+  execute() {
+    console.log("Executing command...");
+  }
+}
+
+class Invoker {
+  constructor(private command: Command) {}
+
+  run() {
+    this.command.execute();
+  }
+}
+
+const command = new Command();
+const invoker = new Invoker(command);
+invoker.run();
+```
+
+## Other Useful Patterns
+
+### Currying
+
+It is possible to transform a function with multiple arguments into a sequence of unary functions.
+
+```typescript
+const sum = (a: number) => (b: number) => a + b;
+console.log(sum(2)(3)); // 5
+```
+
+### Function Composition
+
+I'm not really sure if this is the name for this but, this allows us to combine multiple functions in one.
+
+```typescript
+const compose = (...fns: Function[]) => (x: any) =>
+  fns.reduceRight((y, f) => f(y), x);
+
+const uppercase = (str: string) => str.toUpperCase();
+const exclaim = (str: string) => `${str}!`;
+
+const shout = compose(exclaim, uppercase);
+console.log(shout("hello world")); // "HELLO WORLD!"
+```
+
+## Conclusion
+
+Design patterns in TypeScript allow you to better structure your code, improve its maintainability, and optimize reuse. Applying them correctly can make a huge difference in developing scalable and efficient applications.
+
+If you want to delve deeper into these patterns, comment on which one you are interested in learning in detail! 🚀
