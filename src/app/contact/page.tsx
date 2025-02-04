@@ -38,7 +38,7 @@ const Contactme = () => {
             <strong>
               If you prefer, you can message me directly on WhatsApp.
             </strong>{" "}
-            Simply click the button below and we'll be in touch right away.
+            Simply click the button below and we&apos;ll be in touch right away.
           </p>
 
           <a
@@ -53,8 +53,8 @@ const Contactme = () => {
         <div className="flex flex-col items-center justify-center pb-8 w-2/3">
           <p className="text-lg dark:text-gray-300 mb-4">
             <strong>
-              Alternatively, if you'd like to send me an email, feel free to
-              reach out there as well.
+              Alternatively, if you&apos;d like to send me an email, feel free
+              to reach out there as well.
             </strong>{" "}
             Click the button below to open your email client and send me a
             message.
