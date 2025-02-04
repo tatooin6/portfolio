@@ -17,6 +17,9 @@ const navItems = {
   "/experience": {
     name: "experience",
   },
+  "/contact": {
+    name: "contact",
+  },
 };
 
 const Navbar = () => {
