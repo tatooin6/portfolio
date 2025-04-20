@@ -1,29 +1,25 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
 
 const ThemeSwitcher = () => {
-    const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
-    function darkModeHandler(): void {
-        setDark((current) => !current);
-        document.body.classList.toggle("dark");
-    }
+  function darkModeHandler(): void {
+    setDark((current) => !current);
+    document.body.classList.toggle("dark");
+  }
 
-    return (
-        <div className='dark:text-[#bb9af7]'>
-            <button onClick={() => darkModeHandler()}>
-                {
-                    dark && <IoSunny />
-                }
-                {
-                    !dark && <IoMoon />
-                }
-            </button>
-        </div>
-    )
-}
+  return (
+    <div className="dark:text-[#bb9af7]">
+      <button onClick={() => darkModeHandler()}>
+        {dark && <IoSunny />}
+        {!dark && <IoMoon />}
+      </button>
+    </div>
+  );
+};
 
-export default ThemeSwitcher
+export default ThemeSwitcher;
