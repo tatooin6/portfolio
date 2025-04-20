@@ -20,13 +20,16 @@ const navItems = {
   "/contact": {
     name: "contact",
   },
+  "/projects": {
+    name: "projects",
+  },
 };
 
 const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
+    <aside className="-ml-[8px] mb-1 tracking-tight">
       <div className="lg:sticky lg:top-0 px-1">
         <nav
           className="flex flex-row justify-between relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
