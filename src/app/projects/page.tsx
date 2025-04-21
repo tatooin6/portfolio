@@ -49,7 +49,7 @@ const page = () => {
     <div className="flex flex-col items-center justify-center min-h-screen center p-8">
       {listItems.length !== 0 ? (
         <>
-          <p className="text-2xl">Projects</p>
+          <p className="text-[#2ac3de] text-2xl">Projects</p>
           <ImageList listItems={listItems} />
         </>
       ) : (
