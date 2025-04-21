@@ -1,77 +1,72 @@
+import Link from "next/link";
 import ImageList from "../components/ImageList";
 
-const listItems = [
+interface listItemsProps {
+  name: string;
+  date: Date;
+  tagline: string;
+  technologies: string[];
+  img: string;
+  link: string;
+  repo: string;
+}
+
+// TODO: extract this project lists into a file to be imported
+const listItems: listItemsProps[] = [
   {
-    name: "Portfolio Website",
-    date: new Date("2022-05-15"),
-    tagline: "A personal portfolio built with React and TailwindCSS.",
-    technologies: ["React", "TailwindCSS", "TypeScript"],
-    img: "/images/projects/A.jpeg",
-    link: "somethign",
+    name: "ServiDesk",
+    date: new Date("2020-09-20"),
+    tagline: "A useful desktop support platform for small businesses",
+    technologies: ["NodeJS", "Socket.io", "Javascript", "HTML", "CSS"],
+    img: "A.png",
+    link: "",
+    repo: "https://github.com/tatooin6/socket-colas",
   },
   {
-    name: "E-commerce Platform",
-    date: new Date("2021-11-01"),
-    tagline: "An end-to-end e-commerce solution with payment integration.",
-    technologies: ["Node.js", "Express", "MongoDB", "Stripe"],
-    img: "/images/projects/B.jpeg",
-    link: "some_link",
-    repo: "some_repo",
-  },
-  {
-    name: "Chat Application",
-    date: new Date("2022-02-10"),
+    name: "Resume Optimizer",
+    date: new Date("2025-02-27"),
     tagline:
-      "A real-time chat app using Socket.io for seamless communications.",
-    technologies: ["React", "Node.js", "Socket.io", "TypeScript"],
-    img: "/images/projects/C.jpeg",
+      "This project allows to optimize resumes based on a job description using AI.",
+    technologies: ["Python", "FastApi", "Typescript", "ReactJS", "GenAI"],
+    img: "B.png",
     link: "",
-    repo: "only_repo",
+    repo: "https://github.com/tatooin6/resume_optimization",
   },
   {
-    name: "Machine Learning API",
-    date: new Date("2020-08-20"),
-    tagline: "A RESTful API to perform machine learning predictions.",
-    technologies: ["Python", "TensorFlow", "FastAPI"],
-    img: "/images/projects/D.jpeg",
-    link: "",
-    repo: "",
-  },
-  {
-    name: "Mobile Fitness App",
-    date: new Date("2021-03-25"),
-    tagline: "An app to track workouts and monitor fitness progress.",
-    technologies: ["React Native", "Firebase", "TypeScript"],
-    img: "/images/projects/E.jpeg",
-    link: "",
-    repo: "",
-  },
-  {
-    name: "Weather Dashboard",
-    date: new Date("2022-07-05"),
+    name: "Jour Buddy",
+    date: new Date("2025-04-08"),
     tagline:
-      "A dashboard displaying live weather data with interactive charts.",
-    technologies: ["Vue.js", "D3.js", "Node.js"],
-    img: "/images/projects/F.jpeg",
+      "Spark Ideas with AI: With a topic instantly get title and discussion angle suggestions to kickstart content.",
+    technologies: ["ReactJS", "Node.js", "GenAI", "TypeScript"],
+    img: "C.png",
     link: "",
-    repo: "",
-  },
-  {
-    name: "Task Management Tool",
-    date: new Date("2023-01-12"),
-    tagline: "A productivity tool to efficiently manage tasks and projects.",
-    technologies: ["Angular", "TypeScript", "Bootstrap"],
-    img: "/images/projects/A.jpeg",
-    link: "",
-    repo: "",
+    repo: "https://github.com/tatooin6/content-suggestions",
   },
 ];
 
 const page = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen center p-8">
-      <p className="text-2xl">Projects</p>
-      <ImageList listItems={listItems} />
+      {listItems.length !== 0 ? (
+        <>
+          <p className="text-2xl">Projects</p>
+          <ImageList listItems={listItems} />
+        </>
+      ) : (
+        <>
+          <span className="text-[#2ac3de] text-xl">Project loading issue.</span>
+          <p>
+            Please see the{" "}
+            <Link
+              href={"https://github.com/tatooin6?tab=repositories"}
+              target="_blank"
+              className="text-[#bb9af7]"
+            >
+              GitHub repository.
+            </Link>
+          </p>
+        </>
+      )}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { RiGitRepositoryLine } from "react-icons/ri";
+import Tooltip from "./Tooltip";
 
 interface ListItemProps {
   topLeftText: string;
@@ -38,9 +39,11 @@ const ListItem = ({
       <div className="flex min-w-0 gap-x-4">
         <div className="min-w-0 flex-auto">
           <p className="text-sm/6 font-semibold">{topLeftText}</p>
-          <p className="mt-1 truncate text-xs/5 text-[#7aa2f7]">
-            {bottomLeftText}
-          </p>
+          <Tooltip text={bottomLeftText}>
+            <p className="mt-1 truncate text-xs/5 text-[#7aa2f7]">
+              {bottomLeftText}
+            </p>
+          </Tooltip>
         </div>
       </div>
       <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
@@ -50,12 +53,16 @@ const ListItem = ({
       {isOnHover && (link || repo) && (
         <div className="flex flex-col items-center justify-center content-between gap-4">
           {link && (
-            <Link className="cursor-pointer" href={link}>
+            <Link className="cursor-pointer" href={link} target="_blank">
               <FaArrowUpRightFromSquare />
             </Link>
           )}
           {repo && (
-            <Link className="cursor-pointer text-xl" href={repo}>
+            <Link
+              className="cursor-pointer text-xl"
+              href={repo}
+              target="_blank"
+            >
               <RiGitRepositoryLine />
             </Link>
           )}

@@ -10,16 +10,14 @@ interface ImageListProps {
 }
 
 const ImageList = ({ listItems }: ImageListProps) => {
-  const [selectedProject, setSelectedProject] = useState(
-    "/images/projects/A.jpeg",
-  );
+  const [selectedProject, setSelectedProject] = useState("A.png");
   const handleHover = (src: string) => {
     setSelectedProject(src);
   };
   return (
     <div className="flex flex-row text-[#2ac3de] w-full">
       <div className="hidden sm:flex w-1/2 p-4 justify-center items-center">
-        <Picture src={selectedProject} />
+        <Picture src={`/images/projects/${selectedProject}`} />
       </div>
       <div className="bg-[#414868] sm:w-1/2 w-full px-2 my-4 rounded-lg max-h-[500px] overflow-y-auto">
         <ul role="list" className="divide-y divide-[#b4f9f8]">
