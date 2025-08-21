@@ -2,7 +2,7 @@ import MilestoneItem from "./MilestoneItem";
 
 export interface Milestone {
   startDate: Date;
-  endDate: Date;
+  endDate: string | Date | null;
   title: string;
   company?: string;
   summary: string;

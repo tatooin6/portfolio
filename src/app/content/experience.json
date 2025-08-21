@@ -1,5 +1,13 @@
 [
   {
+    "startDate": "2025-06-23",
+    "endDate": "Present",
+    "title": "Full-Stack Developer",
+    "company": "AGETIC (Agencia de Gobierno Electr\u00F3nico y Tecnolog\u00EDas de Informaci\u00F3n y Comunicaci\u00F3n)",
+    "summary": "Developing digital government platforms and modernizing public services through scalable web applications.",
+    "extendedDescription": "Designing and developing digital platforms using Next.js, NestJS, PostgreSQL, and Docker to support e-government initiatives. Implementing secure authentication flows and multi-tenant architectures to serve diverse institutions. Contributing to microservices architecture and CI/CD pipelines to ensure scalability, maintainability, and reliability across systems. Collaborating with multidisciplinary teams to align technical solutions with public administration needs."
+  },
+  {
     "startDate": "2024-08-01",
     "endDate": "2024-11-30",
     "title": "Full-Stack Developer",
