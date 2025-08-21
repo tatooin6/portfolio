@@ -21,13 +21,13 @@ export default function Home() {
         <div className="pt-4 flex flex-col lg:flex-row items-center justify-center w-full gap-4 text-center">
           <DownloadFileButton
             text="Download CV ENG"
-            download="AntonioPantoja_CV.pdf"
-            href="/CV-AntonioPantoja-01-2025_ENG.pdf"
+            download="AntonioPantoja_CV_ENG.pdf"
+            href="/CV-AntonioPantoja_ENG.pdf"
           />
           <DownloadFileButton
             text="Descargar CV ESP"
-            download="AntonioPantoja_CV.pdf"
-            href="/CV-AntonioPantoja-01-2025_ESP.pdf"
+            download="AntonioPantoja_CV_ESP.pdf"
+            href="/CV-AntonioPantoja_ESP.pdf"
           />
         </div>
       </div>

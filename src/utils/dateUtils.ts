@@ -1,3 +1,5 @@
+import { Milestone } from "@/app/components/Timeline";
+
 const months: { [key: number]: string } = {
   0: "January",
   1: "February",
@@ -13,9 +15,12 @@ const months: { [key: number]: string } = {
   11: "December",
 };
 
-function titleFormat(incomingDate: Date) {
-  const month = incomingDate.getMonth();
-  return `${months[month]} ${incomingDate.getFullYear()}`;
+function titleFormat(incomingDate: Milestone["endDate"]) {
+  if (!incomingDate) return "Present";
+  const d =
+    incomingDate instanceof Date ? incomingDate : new Date(incomingDate);
+  if (isNaN(d.getTime())) return "-";
+  return `${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
 function formatDate(date: Date): string {
