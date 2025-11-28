@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} dark flex flex-col min-h-screen font-mono`}
+        className={`${inter.className} dark flex flex-col min-h-screen bg-[#0b1120] text-slate-100 antialiased`}
       >
         <div className="dark:bg-[#24283b] flex flex-col flex-grow">
           <Navbar />

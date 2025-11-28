@@ -4,7 +4,7 @@ import Link, { LinkProps } from "next/link";
 import { highlight } from "sugar-high";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-type WithChildren<P = {}> = P & { children: string };
+type WithStringChildren<P = {}> = P & { children: string };
 type AnchorAndLink = React.HTMLProps<HTMLAnchorElement> & LinkProps;
 type TableProps = {
   data: {
@@ -13,7 +13,7 @@ type TableProps = {
   };
 };
 
-const slugify = (str: string) => {
+export const slugify = (str: string) => {
   return str
     .toString()
     .toLowerCase()
@@ -73,25 +73,48 @@ const RoundedImage = (props: ImageProps) => {
 const Code = ({
   children,
   ...props
-}: WithChildren<React.HTMLProps<HTMLElement>>) => {
+}: WithStringChildren<React.HTMLProps<HTMLElement>>) => {
   let codeHTML = highlight(children);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 };
 
+const getHeadingText = (children: React.ReactNode): string => {
+  return React.Children.toArray(children)
+    .map((child): string => {
+      if (typeof child === "string") return child;
+      if (
+        React.isValidElement(child) &&
+        typeof child.props.children !== "undefined"
+      ) {
+        return getHeadingText(child.props.children as React.ReactNode);
+      }
+      return "";
+    })
+    .join("");
+};
+
 const createHeading = (level: Number) => {
-  const Heading = ({ children }: WithChildren) => {
-    let slug = slugify(children);
+  const Heading = ({ children }: { children: React.ReactNode }) => {
+    const headingText = getHeadingText(children);
+    let slug = slugify(headingText);
     return React.createElement(
       `h${level}`,
-      { id: slug },
+      { id: slug, className: "group scroll-mt-28" },
       [
-        React.createElement("a", {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: "anchor",
-        }),
+        React.createElement(
+          "a",
+          {
+            href: `#${slug}`,
+            key: `link-${slug}`,
+            className:
+              "anchor mr-3 inline-flex translate-x-[-1.5rem] opacity-0 transition group-hover:opacity-100 text-violet-400",
+            style: { fontSize: "inherit" },
+            "aria-label": `Link to ${headingText}`,
+          },
+          "#",
+        ),
+        children,
       ],
-      children,
     );
   };
 
