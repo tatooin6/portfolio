@@ -1,8 +1,31 @@
-import React from "react";
+"use client"
+
+import React, { useRef } from "react";
 
 import { FaTelegramPlane, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contactme = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        'serviceId',
+        'templateId',
+        form.current,
+        {
+          publicKey: 'my-public-key'
+        }
+      )
+      .then(() => console.log("Success!"))
+      .catch((err: unknown) => console.error("FAILED:", err))
+  }
+
   return (
     <>
       <section className="flex flex-col items-center justify-center p-8 dark:text-gray-200 rounded-lg">
@@ -10,11 +33,35 @@ const Contactme = () => {
           Contact Me
         </h2>
 
+        <form
+          aria-label="Contact form"
+          className="contact-form-container"
+          onSubmit={sendEmail}
+          ref={form}
+        >
+          <div className="form-group">
+            <label htmlFor="userName">Name (required)</label>
+            <input type="text" id="userName" name="userName" required autoComplete="name" placeholder="John Doe" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="emailAddress">Email Address (required)</label>
+            <input type="email" id="emailAddress" name="emailAddress" required autoComplete="email" placeholder="you@example.com" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" rows={5} placeholder="How can I help you?"></textarea>
+          </div>
+
+          <button type="submit" className="submit-button">Send Message</button>
+        </form>
         <p className="w-2/3 pb-20">
           Feel free to reach out to me if you&apos;re interested in getting in
           touch. I&apos;m open to conversations, collaborations, or any
           questions you may have. You can contact me via:
         </p>
+
 
         <div className="flex flex-col items-center justify-center pb-8 w-2/3">
           <p className="text-lg dark:text-gray-300 mb-4">
