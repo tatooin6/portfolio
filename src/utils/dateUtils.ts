@@ -31,4 +31,14 @@ function formatDate(date: Date): string {
   });
 }
 
-export { titleFormat, formatDate };
+function formatSubmissionTime() {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(new Date());
+}
+
+export { titleFormat, formatDate, formatSubmissionTime };
