@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { enqueueSnackbar } from "notistack";
 
 import { formatSubmissionTime } from "@/utils/dateUtils";
@@ -23,14 +22,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
 }) => {
   const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!form.current) return;
-
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     const formData = new FormData(form.current);
     const submission: ContactFormData = {
@@ -39,44 +34,37 @@ const ContactForm: React.FC<ContactFormProps> = ({
       message: String(formData.get("message") ?? "").trim(),
     };
 
-    if (!serviceId || !templateId || !publicKey) {
-      console.error("Missing EmailJS configuration.");
-      enqueueSnackbar(
-        "Message service is misconfigured. Please use the email option instead.",
-        { variant: "error" }
-      );
-      onSubmitError?.(submission);
-      return;
-    }
-
-    const templateParams = {
-      name: submission.name,
-      time: formatSubmissionTime(),
-      message: submission.message,
-      title: submission.name,
-      email: submission.email,
-    };
-
-    emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
-      .then(() => {
-        enqueueSnackbar("Message delivered! I will reply as soon as I can.", {
-          variant: "success",
-        });
-        form.current?.reset();
-        onSubmitSuccess?.();
-      })
-      .catch((err: unknown) => {
-        console.error("FAILED:", err);
-        enqueueSnackbar(
-          "Something went wrong. Use the email option below to reach me.",
-          {
-            variant: "error",
-          }
-        );
-        form.current?.reset();
-        onSubmitError?.(submission);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submission),
       });
+
+      if (!response.ok) {
+        const { message } = await response.json();
+        console.error("Server error:", message);
+        enqueueSnackbar("Something went wrong. Try again later.", {
+          variant: "error",
+        });
+        onSubmitError?.(submission);
+        return;
+      }
+
+      enqueueSnackbar("Message sent! I'll get back to you soon", {
+        variant: "success",
+      });
+      form.current.reset();
+      onSubmitSuccess?.();
+    } catch (error) {
+      console.error("Network error:", error);
+      enqueueSnackbar("Failed to send message. Try again later.", {
+        variant: "error",
+      });
+      onSubmitError?.(submission);
+    }
   };
 
   return (
@@ -99,7 +87,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="user_name"
           required
           autoComplete="name"
-          placeholder="John Doe"
+          placeholder="Your Full Name"
           className="w-full rounded-2xl border border-[#7aa2f7]/60 bg-transparent px-4 py-3 text-[#c0caf5] placeholder:text-[#7aa2f7]/60 focus:border-[#bb9af7] focus:outline-none focus:ring-2 focus:ring-[#bb9af7]/80 transition"
         />
       </div>
@@ -117,7 +105,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="user_email"
           required
           autoComplete="email"
-          placeholder="you@example.com"
+          placeholder="name@email.com"
           className="w-full rounded-2xl border border-[#7aa2f7]/60 bg-transparent px-4 py-3 text-[#c0caf5] placeholder:text-[#7aa2f7]/60 focus:border-[#bb9af7] focus:outline-none focus:ring-2 focus:ring-[#bb9af7]/80 transition"
         />
       </div>
@@ -134,7 +122,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           name="message"
           rows={6}
           required
-          placeholder="How can I help you?"
+          placeholder="How can I help you? What are you looking to collaborate on?"
           className="w-full resize-none rounded-2xl border border-[#7aa2f7]/60 bg-transparent px-4 py-3 text-[#c0caf5] placeholder:text-[#7aa2f7]/60 focus:border-[#bb9af7] focus:outline-none focus:ring-2 focus:ring-[#bb9af7]/80 transition"
         />
       </div>
