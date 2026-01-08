@@ -10,7 +10,6 @@ import {
   BiLogoCss3,
 } from "react-icons/bi";
 import { TbBrandCSharp } from "react-icons/tb";
-import { BsFiletypeScss } from "react-icons/bs";
 import {
   RiReactjsFill,
   RiNextjsFill,
@@ -21,6 +20,7 @@ import {
   SiDotnet,
   SiMysql,
   SiPostgresql,
+  SiNestjs,
   SiMongodb,
   SiDocker,
   SiSourcetree,
@@ -30,7 +30,7 @@ import {
 } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
 import { IoLogoGitlab, IoLogoGithub } from "react-icons/io5";
-import { DiAtom, DiPhotoshop } from "react-icons/di";
+import { DiAtom } from "react-icons/di";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaGitAlt } from "react-icons/fa";
 
@@ -101,7 +101,6 @@ const About = () => {
             <Icon icon={BiLogoPython} description="Python" />
             <Icon icon={BiLogoHtml5} description="HTML5" />
             <Icon icon={BiLogoCss3} description="CSS3" />
-            <Icon icon={BsFiletypeScss} description="SCSS" />
           </div>
         </div>
 
@@ -110,6 +109,7 @@ const About = () => {
           <div className="flex flex-wrap gap-2 mt-2">
             <Icon icon={RiReactjsFill} description="ReactJS" />
             <Icon icon={RiNextjsFill} description="NextJS" />
+            <Icon icon={SiNestjs} description="NestJS" />
             <Icon icon={RiNodejsFill} description="NodeJS" />
             <Icon icon={SiDotnet} description=".NET Core" />
             <Icon icon={RiTailwindCssFill} description="TailwindCSS" />
@@ -119,8 +119,8 @@ const About = () => {
         <div className="mt-6">
           <Badge tag="Databases" color={badgeColor.yellow} />
           <div className="flex flex-wrap gap-2 mt-2">
-            <Icon icon={SiMysql} description="MySQL" />
             <Icon icon={SiPostgresql} description="PostgreSQL" />
+            <Icon icon={SiMysql} description="MySQL" />
             <Icon icon={SiMongodb} description="MongoDB" />
           </div>
         </div>
@@ -141,7 +141,6 @@ const About = () => {
             <Icon icon={SiFigma} description="Figma" />
             <Icon icon={DiAtom} description="Atomic Design" />
             <Icon icon={MdOutlineDesignServices} description="UI/UX Design" />
-            <Icon icon={DiPhotoshop} description="Adobe Photoshop" />
           </div>
         </div>
 
