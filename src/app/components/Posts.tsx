@@ -25,7 +25,7 @@ const Posts = () => {
                 href={`/blog/${post.slug}`}
               >
                 <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="dark:text-gray-200 w-[100px] tabular-nums">
+                  <p className="dark:text-[#9ece6a] w-[150px] tabular-nums">
                     {formatDate(post.metadata.publishedAt, false)}
                   </p>
                   <p className="dark:text-gray-300 tracking-tight">
@@ -36,7 +36,7 @@ const Posts = () => {
             ))}
         </div>
       ) : (
-        <div className="flex justify-center items-center mt-6 p-4 border-sky-50 border-dashed border-gray-500 rounded-lg bg-gray-100 dark:bg-gray-800">
+        <div className="flex justify-center items-center mt-6 p-4 border-sky-50 border-dashed rounded-lg bg-gray-100 dark:bg-gray-800">
           <p className="text-lg text-neutral-800 dark:text-neutral-200">
             Sorry, there are no blogs available yet.{" "}
             <span className="text-grey-500 font-semibold">
