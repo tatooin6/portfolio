@@ -2,25 +2,40 @@
 import { useState } from 'react';
 import Image from 'next/image'
 
-const ProfilePicture = () => {
-    const [profile, setProfile] = useState('/images/profileCBBA.jpg');
+type ProfilePictureProps = {
+    profiles: string[];
+};
+
+const ProfilePicture = ({ profiles }: ProfilePictureProps) => {
+    const [profileIndex, setProfileIndex] = useState(() => {
+        if (profiles.length === 0) return 0;
+        return Math.floor(Math.random() * profiles.length);
+    });
 
     const handleProfilePicUpdate = () => {
-        if (profile === '/images/profileCBBA.jpg') {
-            setProfile('/images/profileLP.jpg');
-            return;
-        }
-        setProfile('/images/profileCBBA.jpg');
+        if (profiles.length <= 1) return;
+
+        setProfileIndex((currentIndex) => {
+            let nextIndex = currentIndex;
+            while (nextIndex === currentIndex) {
+                nextIndex = Math.floor(Math.random() * profiles.length);
+            }
+            return nextIndex;
+        });
+    };
+
+    if (profiles.length === 0) {
+        return null;
     }
 
     return (
         <Image
-            src={profile}
+            src={profiles[profileIndex]}
             width={250}
             height={250}
             alt="Antonio"
             className="rounded-full"
-            onClick={() => handleProfilePicUpdate()}
+            onClick={handleProfilePicUpdate}
         />
     )
 }

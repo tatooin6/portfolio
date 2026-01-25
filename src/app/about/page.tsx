@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   BiLogoTypescript,
@@ -39,11 +39,26 @@ import Badge, { badgeColor } from "../components/common/Badge";
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  return (
-    <div className="px-2 w-full flex lg:flex-row flex-col items-center dark:text-gray-200">
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    const handleChange = (event: MediaQueryListEvent | MediaQueryList) => {
+      setIsExpanded(event.matches);
+    };
+
+    handleChange(mediaQuery);
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
+  return (
+    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-[#c0caf5]">
       <div className="flex w-full max-w-4xl flex-col gap-8">
-        <div className="space-y-4">
+        <div className="space-y-4 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2ac3de]">
             Who am I?
           </p>
@@ -51,14 +66,21 @@ const About = () => {
             A curious mind, a builder and a lifelong learner
           </h2>
           <p className="text-lg leading-relaxed text-[#c0caf5]">
-            With a background in teaching, a passion for music, and years of experience in software development, I've found joy in creating solutions that matter. Whether I'm crafting interfaces, writing clean APIs, or exploring satellite image processing, I bring heart and logic to the work I do. Learn about my journey, my passions, and my goals.
+            With a background in teaching ands years of experience in software
+            development, I've found a way to enjoy creating impactful solutions.
+            Whether I'm crafting interfaces, writing some APIs, or exploring
+            new tech stuff around,{" "}
+            <strong className="text-[#9ece6a]">
+              I bring heart and logic to the work I do.
+            </strong>
+            {" "}Learn about my journey, the lessons I&apos;ve learned, and some of
+            my goals.
           </p>
         </div>
 
-        <div className="flex w-full max-w-4xl flex-row">
-
-          <div className="lg:w-1/2 w-full p-2">
-            <h1 className="text-xl pb-6 pt-8">Get to know me</h1>
+        <div className="flex w-full flex-col gap-10 lg:flex-row">
+          <div className="w-full p-2 lg:w-1/2">
+            <h1 className="text-xl pb-6 pt-8 text-[#9ece6a]">Get to know me</h1>
             <div
               className={`relative overflow-hidden transition-all duration-300 ${
 isExpanded ? "max-h-full" : "max-h-40"
@@ -118,8 +140,8 @@ isExpanded ? "max-h-full" : "max-h-40"
               </button>
             </div>
           </div>
-          <div className="lg:w-1/2 w-full p-2">
-            <h1 className="text-xl pb-6 pt-8">Skills</h1>
+          <div className="w-full p-2 lg:w-1/2">
+            <h1 className="text-xl pb-6 pt-8 text-[#9ece6a]">Skills</h1>
 
             <div>
               <Badge tag="Languages" color={badgeColor.red} />
@@ -183,11 +205,9 @@ isExpanded ? "max-h-full" : "max-h-40"
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
-    </div>
+    </section>
   );
 };
 

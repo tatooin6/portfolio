@@ -11,9 +11,31 @@ const Experience = () => {
   }));
 
   return (
-    <div className="px-4">
-      <Timeline milestones={milestones} />
-    </div>
+    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-[#c0caf5]">
+      <div className="w-full max-w-4xl flex flex-col gap-8">
+        <div className="space-y-4 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2ac3de]">
+            Where I&apos;ve been
+          </p>
+          <h2 className="text-4xl font-bold text-[#bb9af7]">
+            A developer&apos;s timeline
+          </h2>
+          <p className="text-lg leading-relaxed text-[#c0caf5]">
+            Here&apos;s a glimpse of my professional journey. I&apos;ve taught,
+            built, shipped, and scaled projects across diverse teams and
+            domains.{" "}
+            <strong className="text-[#9ece6a]">
+              Each experience has sharpened my skills and deepened my passion for tech.
+            </strong>{" "}
+            Dive into the roles that shaped me.
+          </p>
+        </div>
+
+        <div className="w-full">
+          <Timeline milestones={milestones} />
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -1,23 +1,47 @@
 import ProfilePicture from "./components/common/ProfilePicture";
 import DownloadFileButton from "./components/DownloadFileButton";
+import fs from "fs";
+import path from "path";
 
 export default function Home() {
+  const profilesDir = path.join(process.cwd(), "public", "images", "profiles");
+  const profiles = fs.existsSync(profilesDir)
+    ? fs
+        .readdirSync(profilesDir)
+        .filter((fileName) =>
+          fs.statSync(path.join(profilesDir, fileName)).isFile()
+        )
+        .map((fileName) => `/images/profiles/${fileName}`)
+    : [];
+
   return (
-    <main className="flex flex-col items-center justify-start p-24">
-      <div className="z-10 w-full max-w-5xl flex flex-col items-center justify-center text-sm">
-        <div className="pb-6">
-          <ProfilePicture />
+    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-[#c0caf5]">
+      <div className="z-10 w-full max-w-4xl flex flex-col items-center gap-8">
+        <div className="space-y-4 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2ac3de]">
+            Hi there
+          </p>
+          <h2 className="text-4xl font-bold text-[#bb9af7]">
+            I&apos;m Tato - Fullstack Web Developer & Creative Mind
+          </h2>
+          <div className="flex justify-center">
+            <ProfilePicture profiles={profiles} />
+          </div>
+          <p className="text-lg leading-relaxed text-[#c0caf5]">
+            Full-stack developer crafting  scalable and
+            meaningful web development projects. From backend logic to frontend
+            polish, 
+            {" "}
+            <strong className="text-[#9ece6a]">
+              I build modern web solutions with clean code, smart architecture, and a creative edge.
+            </strong>{" "}
+          </p>
+          <p>
+            Feel free to download my CV below and explore more on this web site about who I am, what I do, and
+            how we could work together.
+          </p>
         </div>
-        <h2 className="text-2xl/7 font-bold dark:text-gray-200 sm:truncate sm:text-3xl sm:tracking-tight">
-          Tato
-        </h2>
-        <p className="text-xl lg:static flex w-full justify-start bg-gradient-to-b pb-6 pt-8 backdrop-blur-2xl dark:from-inherit dark:text-gray-200 lg:rounded-xl lg:p-4">
-          Full Stack Web Developer & Educator
-        </p>
-        <p className="flex w-full justify-start lg:p-4 pb-6 pt-8 dark:text-gray-200">
-          Experienced professional with a passion for efficient solutions and
-          sharing technical expertise.
-        </p>
+
         <div className="pt-4 flex flex-col lg:flex-row items-center justify-center w-full gap-4 text-center">
           <DownloadFileButton
             text="Download CV ENG"
@@ -31,6 +55,6 @@ export default function Home() {
           />
         </div>
       </div>
-    </main>
+    </section>
   );
 }
