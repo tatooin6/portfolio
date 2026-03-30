@@ -15,12 +15,12 @@ const ImageList = ({ listItems }: ImageListProps) => {
     setSelectedProject(src);
   };
   return (
-    <div className="flex flex-row text-[#2ac3de] w-full">
-      <div className="hidden sm:flex w-1/2 p-4 justify-center items-center">
+    <div className="flex w-full flex-row text-theme-secondary">
+      <div className="hidden w-1/2 items-center justify-center p-4 sm:flex">
         <Picture src={`/images/projects/${selectedProject}`} />
       </div>
-      <div className="bg-[#414868] sm:w-1/2 w-full px-2 my-4 rounded-lg max-h-[500px] overflow-y-auto">
-        <ul role="list" className="divide-y divide-[#b4f9f8]">
+      <div className="my-4 max-h-[500px] w-full overflow-y-auto rounded-lg bg-theme-panel sm:w-1/2">
+        <ul role="list" className="divide-y divide-theme-secondary/30 px-2">
           {listItems.map((project) => (
             <ListItem
               key={project.name}

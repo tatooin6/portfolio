@@ -99,7 +99,7 @@ export default function Blog({ params }: BlogParams) {
   const headings = getHeadingsFromContent(post.content);
 
   return (
-    <section className="px-4 py-12">
+    <section className="px-4 py-12 text-theme-text">
       <Script
         id="blog-post-schema"
         type="application/ld+json"
@@ -128,24 +128,24 @@ export default function Blog({ params }: BlogParams) {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
             <Link
               href="/blog"
-              className="inline-flex shrink-0 items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-violet-400 transition hover:text-violet-300"
+              className="inline-flex shrink-0 items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-theme-primary transition hover:text-theme-secondary"
             >
               <Icon icon={IoArrowBack} description="back" />
             </Link>
-            <h1 className="text-2xl font-semibold tracking-tight text-violet-400 transition">
+            <h1 className="text-2xl font-semibold tracking-tight text-theme-primary transition">
               {post.metadata.title}
             </h1>
           </div>
-          <p className="mt-3 text-base text-neutral-400">
+          <p className="mt-3 text-base text-theme-muted">
             {formatDate(post.metadata.publishedAt)}
           </p>
           {post.metadata.summary && (
-            <p className="mt-4 text-lg text-neutral-300">
+            <p className="mt-4 text-lg text-theme-text">
               {post.metadata.summary}
             </p>
           )}
-          <div className="my-8 h-px w-full bg-white/10" />
-          <article className="prose prose-lg prose-invert prose-neutral max-w-none rounded-3xl bg-transparent text-base lg:prose-xl dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-headings:leading-tight prose-headings:mt-14 prose-p:leading-relaxed prose-p:tracking-normal prose-a:text-violet-400 prose-a:no-underline prose-a:font-medium prose-blockquote:border-l-4 prose-blockquote:border-violet-500 prose-blockquote:bg-white/5 prose-blockquote:py-4 prose-blockquote:pl-6 prose-blockquote:text-lg prose-blockquote:italic prose-code:rounded-md prose-code:bg-[#1e1e1e] prose-code:px-2 prose-code:py-1 prose-code:text-rose-200 prose-pre:bg-[#1e1e1e] prose-pre:p-5 prose-pre:text-sm prose-pre:leading-relaxed prose-pre:rounded-2xl prose-pre:border prose-pre:border-white/10 prose-pre:shadow-2xl prose-pre:text-slate-100 prose-ul:my-6 prose-ol:my-6 prose-li:my-2 prose-img:rounded-2xl prose-hr:border-white/10">
+          <div className="my-8 h-px w-full bg-theme-border/20" />
+          <article className="prose prose-lg max-w-none rounded-3xl bg-transparent text-base lg:prose-xl dark:prose-invert prose-headings:mt-14 prose-headings:font-semibold prose-headings:leading-tight prose-headings:tracking-tight prose-headings:text-theme-primary prose-p:tracking-normal prose-p:text-theme-text prose-p:leading-relaxed prose-a:font-medium prose-a:text-theme-primary prose-a:no-underline prose-blockquote:border-l-4 prose-blockquote:border-theme-primary prose-blockquote:bg-theme-panel/30 prose-blockquote:py-4 prose-blockquote:pl-6 prose-blockquote:text-lg prose-blockquote:text-theme-text prose-blockquote:italic prose-code:rounded-md prose-code:bg-theme-code prose-code:px-2 prose-code:py-1 prose-code:text-theme-codeText prose-pre:rounded-2xl prose-pre:border prose-pre:border-theme-border/20 prose-pre:bg-theme-code prose-pre:p-5 prose-pre:text-sm prose-pre:leading-relaxed prose-pre:text-theme-contrast prose-pre:shadow-2xl prose-ul:my-6 prose-ol:my-6 prose-li:my-2 prose-img:rounded-2xl prose-hr:border-theme-border/20">
             <CustomMDX source={post.content} />
           </article>
         </main>

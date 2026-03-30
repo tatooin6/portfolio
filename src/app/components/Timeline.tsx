@@ -12,9 +12,9 @@ export interface Milestone {
 const Timeline = ({ milestones }: { milestones: Milestone[] }) => {
   return (
     <div>
-      <h1 className="text-lg pb-5 dark:text-[#9ece6a]">Experience Timeline</h1>
-      <p className="pb-1 dark:text-[#b4f9f8]">Latest Experience</p>
-      <ol className="relative border-s border-gray-700 dark:border-[#7aa2f7]">
+      <h1 className="pb-5 text-lg text-theme-accent">Experience Timeline</h1>
+      <p className="pb-1 text-theme-secondary">Latest Experience</p>
+      <ol className="relative border-s border-theme-border/70">
         {milestones.map((milestone, index) => (
           <MilestoneItem
             key={milestone.startDate.toString()}
@@ -23,7 +23,7 @@ const Timeline = ({ milestones }: { milestones: Milestone[] }) => {
           />
         ))}
       </ol>
-      <p className="dark:text-[#b4f9f8]">Earliest Experience</p>
+      <p className="text-theme-secondary">Earliest Experience</p>
     </div>
   );
 };

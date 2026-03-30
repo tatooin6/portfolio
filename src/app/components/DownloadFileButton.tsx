@@ -10,7 +10,7 @@ const DownloadFileButton = ({href, download, text}:DownloadFileButtonProps) => {
   return (
     <div className="lg:px-3 py-4">
       <a
-        className="bg-transparent hover:bg-gray-100 font-semibold py-2 px-4 border border-gray-400 rounded shadow dark:bg-transparent dark:hover:bg-blue-500 dark:text-white dark:hover:text-white dark:border-white dark:hover:border-transparent"
+        className="rounded border border-theme-border/70 bg-transparent px-4 py-2 font-semibold text-theme-text shadow transition hover:border-theme-border hover:bg-theme-border hover:text-theme-contrast"
         href={href}
         download={download}
       >

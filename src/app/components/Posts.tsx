@@ -21,14 +21,14 @@ const Posts = () => {
             .map((post) => (
               <Link
                 key={post.slug}
-                className="flex flex-col space-y-1 mb-4"
+                className="mb-4 flex flex-col space-y-1 rounded-xl px-2 py-2 transition hover:bg-theme-panel/40"
                 href={`/blog/${post.slug}`}
               >
-                <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="dark:text-[#9ece6a] w-[150px] tabular-nums">
+                <div className="flex w-full flex-col space-x-0 md:flex-row md:space-x-2">
+                  <p className="w-[150px] tabular-nums text-theme-accent">
                     {formatDate(post.metadata.publishedAt, false)}
                   </p>
-                  <p className="dark:text-gray-300 tracking-tight">
+                  <p className="tracking-tight text-theme-text">
                     {post.metadata.title}
                   </p>
                 </div>
@@ -36,10 +36,10 @@ const Posts = () => {
             ))}
         </div>
       ) : (
-        <div className="flex justify-center items-center mt-6 p-4 border-sky-50 border-dashed rounded-lg bg-gray-100 dark:bg-gray-800">
-          <p className="text-lg text-neutral-800 dark:text-neutral-200">
+        <div className="mt-6 flex items-center justify-center rounded-lg border border-dashed border-theme-border/40 bg-theme-panel/40 p-4">
+          <p className="text-lg text-theme-text">
             Sorry, there are no blogs available yet.{" "}
-            <span className="text-grey-500 font-semibold">
+            <span className="font-semibold text-theme-muted">
               Check back soon!
             </span>
           </p>

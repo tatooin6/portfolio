@@ -51,9 +51,9 @@ const TableOfContents = ({ headings }: Props) => {
   return (
     <nav
       aria-label="Table of contents"
-      className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 backdrop-blur dark:bg-white/5"
+      className="rounded-2xl border border-theme-border/20 bg-theme-panel/20 px-6 py-5 backdrop-blur"
     >
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-theme-muted">
         On this page
       </p>
       <ul className="mt-4 space-y-2">
@@ -73,8 +73,8 @@ const TableOfContents = ({ headings }: Props) => {
                   isLevelThree ? "px-3" : "px-2"
                 } py-1 text-sm transition-colors ${
                   isActive
-                    ? "bg-violet-500/20 text-white"
-                    : "text-neutral-400 hover:text-white"
+                    ? "bg-theme-primary/20 text-theme-text"
+                    : "text-theme-muted hover:text-theme-primary"
                 }`}
               >
                 {heading.title}
