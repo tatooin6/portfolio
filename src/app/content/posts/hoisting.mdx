@@ -1,0 +1,60 @@
+
+---
+title: 'Hoisting'
+publishedAt: '2026-03-25'
+summary: 'Review What is Hoisting in Javascript and what is it for.'
+
+---
+
+# Hoisting
+
+Hoisting is a characteristic on Javascript that makes variable declarations to "raise up" to the top of the scope before the code is executed. Basically.
+
+Buuut...it's important to mention that this only applies for declarations, not for assignment. And not on all cases, so we're going to look up in which cases this applies.
+
+### var
+
+For instance, the next code prints the variable 'myVar' that is declared and asigned just below.
+
+```javascript
+console.log(myVar); // undefined
+var myVar = 7;
+```
+
+And the output of this code is undefined because of the hoisting of the variable 'MyVar'. What Javascript actually understands is:
+
+```javascript
+var myVar;
+console.log(myVar);
+var myVar = 7;
+```
+
+That's why `myVar` is declared, yes, but not asigned and that's what makes this undefined.
+
+> Now! this happens because we're using `var`, something different happens when we use `const` and `let`. Let's have a look at these ones.
+
+### Let and Const
+
+When we use let or const, they're not accesible before declaration. Meaning that they're 'hoisted' but they're not initialized. They're 'elevated' to the top of the scope but there is a special place called `Temporal Dead Zone` where they exist before they are initialized.
+
+```javascript
+console.log(myLet); // ReferenceError
+let myLet = 3;
+```
+
+### Functions
+
+Functions declared with `function` also are 'elevated' and we can use them before they're declared.
+
+```javascript
+console.log(sayHi()); // "Hi there."
+function sayHi() {
+  console.log('Hi there.');
+  }
+```
+
+### Now, what comes first?
+
+1. Functions declared with `function`.
+2. Variables with `var`.
+3. Variables with `let` and `const`.
