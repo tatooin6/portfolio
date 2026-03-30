@@ -35,7 +35,7 @@ const Navbar = () => {
     <aside className="-ml-[8px] mb-1 tracking-tight">
       <div className="lg:sticky lg:top-0 px-1">
         <nav
-          className="hidden md:flex lg:sticky lg:top-0 px-1 flex-row justify-between relative pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          className="relative hidden flex-row justify-between px-1 pb-0 fade md:relative md:flex md:overflow-auto md:scroll-pr-6 lg:sticky lg:top-0"
           id="nav"
         >
           <div className="flex flex-row space-x-0 pr-10">
@@ -45,13 +45,17 @@ const Navbar = () => {
                 <Link
                   key={path}
                   href={path}
-                  className={`${isActive ? "" : "text-gray-500 hover:text-blue-500"} transition-all hover:text-neutral-800 dark:hover:text-[#9ece6a] dark:text-[#bb9af7] flex align-middle relative py-1 px-2 m-1`}
+                  className={`relative m-1 flex align-middle px-2 py-1 transition-all ${
+                    isActive
+                      ? "text-theme-text"
+                      : "text-theme-muted hover:text-theme-primary"
+                  }`}
                 >
                   <span
                     className={`relative px-[1px] transition-all duration-300 ${
                       isActive
-                        ? "bg-[#9ece6a] text-[#24283b] rounded-sm"
-                        : "hover:bg-[#24283b] hover:text-[#9ece6a]"
+                        ? "rounded-sm bg-theme-accent text-theme-contrast"
+                        : "hover:bg-theme-panel hover:text-theme-accent"
                     }`}
                   >
                     {name[0]}
@@ -66,11 +70,11 @@ const Navbar = () => {
           </div>
         </nav>
 
-        <div className="dark:text-[#bb9af7] flex md:hidden justify-between items-center px-4 py-2">
+        <div className="flex items-center justify-between px-4 py-2 text-theme-primary md:hidden">
           <button
             type="button"
             onClick={() => setDrawerOpen(true)}
-            className="p-2 rounded-md focus:outline-none focus:ring text-2xl"
+            className="rounded-md p-2 text-2xl focus:outline-none focus:ring focus:ring-theme-border/50"
           >
             <IoMenu />
           </button>
@@ -79,23 +83,24 @@ const Navbar = () => {
 
         {drawerOpen && (
           <div
-            className="fixed inset-0 bg-[#0f4b6e] bg-opacity-50 z-40"
+            className="fixed inset-0 z-40 bg-theme-overlay/50"
             onClick={() => setDrawerOpen(false)}
           />
         )}
 
         <div
           className={`
-          fixed top-0 left-0 h-full w-64 bg-white dark:bg-[#24283b] z-50
+          fixed top-0 left-0 z-50 h-full w-64 bg-theme-surface
           transform ${drawerOpen ? "translate-x-0" : "-translate-x-full"}
           transition-transform duration-300 ease-in-out
         `}
         >
-          <div className="p-4 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
-            <h2 className="text-lg text-[#7aa2f7] font-semibold">Menu</h2>
+          <div className="flex items-center justify-between border-b border-theme-border/30 p-4">
+            <h2 className="text-lg font-semibold text-theme-border">Menu</h2>
             <button
+              type="button"
               onClick={() => setDrawerOpen(false)}
-              className="p-2 rounded-md focus:outline-none focus:ring text-[#7aa2f7] text-2xl"
+              className="rounded-md p-2 text-2xl text-theme-border focus:outline-none focus:ring focus:ring-theme-border/50"
             >
               <IoClose />
             </button>
@@ -110,8 +115,8 @@ const Navbar = () => {
                   onClick={() => setDrawerOpen(false)}
                   className={`block py-2 px-3 rounded ${
                     isActive
-                      ? "bg-[#9ece6a] text-[#24283b]"
-                      : "text-[#bb9af7] hover:bg-gray-100 dark:hover:bg-gray-700"
+                      ? "bg-theme-accent text-theme-contrast"
+                      : "text-theme-primary hover:bg-theme-panel"
                   }`}
                 >
                   {name}

@@ -41,20 +41,20 @@ ${fallbackEmailData.message || "No message provided."}`;
   return (
     <>
       <SnackbarProvider maxSnack={3} autoHideDuration={4000}>
-        <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-[#c0caf5]">
+        <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-theme-text">
           <div className="flex w-full max-w-4xl flex-col gap-8 text-center">
             <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2ac3de]">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-theme-secondary">
                 Let&apos;s Talk
               </p>
-              <h2 className="text-4xl font-bold text-[#bb9af7]">
+              <h2 className="text-4xl font-bold text-theme-primary">
                 Get in touch with me
               </h2>
-              <p className="text-lg leading-relaxed text-[#c0caf5]">
+              <p className="text-lg leading-relaxed text-theme-text">
                 The contact form below goes straight to my inbox. I can help to
                 find the right solutions so share as much detail as you can and
                 I can get back to you shortly.{" "}
-                <strong className="text-[#9ece6a]">
+                <strong className="text-theme-accent">
                   I read every message personally.
                 </strong>
               </p>
@@ -67,19 +67,19 @@ ${fallbackEmailData.message || "No message provided."}`;
               />
             </div>
 
-            <p className="text-lg text-[#c0caf5]">
+            <p className="text-lg text-theme-text">
               Feel free to reach out to me if you&apos;re interested in getting
               in touch. I&apos;m open to conversations, collaborations, or any
               questions you may have.
             </p>
 
-            <div className="rounded-3xl border border-[#7aa2f7]/50 bg-[#1f2335]/70 p-8 text-left shadow-2xl shadow-[#1a1b26]">
-              <div className="mb-6 inline-flex rounded-full bg-[#414868] p-4 text-[#7aa2f7]">
+            <div className="rounded-3xl border border-theme-border/50 bg-theme-surface/90 p-8 text-left shadow-2xl shadow-theme-contrast/20">
+              <div className="mb-6 inline-flex rounded-full bg-theme-panel p-4 text-theme-border">
                 <FaEnvelope className="text-2xl" />
               </div>
 
-              <div className="space-y-4 text-[#c0caf5]">
-                <h3 className="text-2xl font-semibold text-[#bb9af7]">
+              <div className="space-y-4 text-theme-text">
+                <h3 className="text-2xl font-semibold text-theme-primary">
                   Prefer email?
                 </h3>
                 <p>
@@ -88,7 +88,7 @@ ${fallbackEmailData.message || "No message provided."}`;
                   back to you shortly.
                 </p>
                 {fallbackEmailData && (
-                  <p className="text-sm text-[#7aa2f7]">
+                  <p className="text-sm text-theme-border">
                     Your latest draft is pre-filled below so you can send it
                     instantly.
                   </p>
@@ -97,7 +97,7 @@ ${fallbackEmailData.message || "No message provided."}`;
 
               <a
                 href={mailtoHref}
-                className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#7aa2f7] px-6 py-3 text-base font-semibold text-[#1a1b26] transition hover:bg-[#9ece6a] focus:outline-none focus:ring-2 focus:ring-[#7aa2f7]/80 focus:ring-offset-2 focus:ring-offset-[#1a1b26]"
+                className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-theme-border px-6 py-3 text-base font-semibold text-theme-contrast transition hover:bg-theme-accent focus:outline-none focus:ring-2 focus:ring-theme-border/80 focus:ring-offset-2 focus:ring-offset-theme-surface"
               >
                 Contact by Email
                 <FaEnvelope className="text-lg" />
@@ -105,11 +105,11 @@ ${fallbackEmailData.message || "No message provided."}`;
             </div>
           </div>
 
-          <p className="mx-auto mt-8 max-w-3xl text-center text-md text-[#7aa2f7]">
+          <p className="mx-auto mt-8 max-w-3xl text-center text-md text-theme-border">
             You can also find my <strong>CV</strong> on the{" "}
             <a
               href="/"
-              className="text-[#bb9af7] underline-offset-4 hover:underline"
+              className="text-theme-primary underline-offset-4 hover:underline"
             >
               Home page
             </a>

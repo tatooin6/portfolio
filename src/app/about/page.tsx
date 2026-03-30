@@ -56,21 +56,21 @@ const About = () => {
   }, []);
 
   return (
-    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-[#c0caf5]">
+    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-theme-text">
       <div className="flex w-full max-w-4xl flex-col gap-8">
         <div className="space-y-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2ac3de]">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-theme-secondary">
             Who am I?
           </p>
-          <h2 className="text-4xl font-bold text-[#bb9af7]">
+          <h2 className="text-4xl font-bold text-theme-primary">
             A curious mind, a builder and a lifelong learner
           </h2>
-          <p className="text-lg leading-relaxed text-[#c0caf5]">
+          <p className="text-lg leading-relaxed text-theme-text">
             With a background in teaching ands years of experience in software
             development, I've found a way to enjoy creating impactful solutions.
             Whether I'm crafting interfaces, writing some APIs, or exploring
             new tech stuff around,{" "}
-            <strong className="text-[#9ece6a]">
+            <strong className="text-theme-accent">
               I bring heart and logic to the work I do.
             </strong>
             {" "}Learn about my journey, the lessons I&apos;ve learned, and some of
@@ -80,7 +80,7 @@ const About = () => {
 
         <div className="flex w-full flex-col gap-10 lg:flex-row">
           <div className="w-full p-2 lg:w-1/2">
-            <h1 className="text-xl pb-6 pt-8 text-[#9ece6a]">Get to know me</h1>
+            <h1 className="pb-6 pt-8 text-xl text-theme-accent">Get to know me</h1>
             <div
               className={`relative overflow-hidden transition-all duration-300 ${
 isExpanded ? "max-h-full" : "max-h-40"
@@ -92,7 +92,7 @@ isExpanded ? "max-h-full" : "max-h-40"
                 years of{" "}
                 <a
                   href="/experience"
-                  className="text-[#bb9af7] underline-offset-4 hover:underline"
+                  className="text-theme-primary underline-offset-4 hover:underline"
                 >
                   experience as a Full Stack Web Developer.
                 </a>
@@ -114,7 +114,7 @@ isExpanded ? "max-h-full" : "max-h-40"
                 contributing to the Web Development Community. Check out the{" "}
                 <a
                   href="/blog"
-                  className="text-[#bb9af7] underline-offset-4 hover:underline"
+                  className="text-theme-primary underline-offset-4 hover:underline"
                 >
                   Blog Section
                 </a>
@@ -128,20 +128,20 @@ isExpanded ? "max-h-full" : "max-h-40"
                 free to reach out. I&apos;d love to connect!
               </p>
               {!isExpanded && (
-                <div className="absolute bottom-0 left-0 w-full h-16 pointer-events-none bg-gradient-to-t from-[rgb(228,228,228)] to-transparent dark:from-[rgb(36,40,59)] dark:to-transparent"></div>
+                <div className="pointer-events-none absolute bottom-0 left-0 h-16 w-full bg-gradient-to-t from-theme-surface to-transparent"></div>
               )}
             </div>
             <div className="flex flex-row justify-center">
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="mt-4 text-indigo-600 dark:text-cyan-200 hover:underline focus:outline-none"
+                className="mt-4 text-theme-secondary hover:underline focus:outline-none"
               >
                 {isExpanded ? "Show less" : "Read more"}
               </button>
             </div>
           </div>
           <div className="w-full p-2 lg:w-1/2">
-            <h1 className="text-xl pb-6 pt-8 text-[#9ece6a]">Skills</h1>
+            <h1 className="pb-6 pt-8 text-xl text-theme-accent">Skills</h1>
 
             <div>
               <Badge tag="Languages" color={badgeColor.red} />

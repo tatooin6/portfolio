@@ -31,7 +31,7 @@ const ListItem = ({
   };
   return (
     <li
-      className="flex justify-between gap-x-6 py-5"
+      className="flex justify-between gap-x-6 py-5 text-theme-text"
       key={topLeftText}
       onMouseOver={() => handleHover()}
       onMouseLeave={() => setIsOnHover(false)}
@@ -40,18 +40,18 @@ const ListItem = ({
         <div className="min-w-0 flex-auto">
           <p className="text-sm/6 font-semibold">{topLeftText}</p>
           <Tooltip text={bottomLeftText}>
-            <p className="mt-1 truncate text-xs/5 text-[#7aa2f7]">
+            <p className="mt-1 truncate text-xs/5 text-theme-border">
               {bottomLeftText}
             </p>
           </Tooltip>
         </div>
       </div>
       <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-        <p className="text-sm/6 text-[#73daca]">{topRightText}</p>
-        <p className="mt-1 text-xs/5 text-[#7aa2f7]">{bottomRightText}</p>
+        <p className="text-sm/6 text-theme-secondary">{topRightText}</p>
+        <p className="mt-1 text-xs/5 text-theme-border">{bottomRightText}</p>
       </div>
       {isOnHover && (link || repo) && (
-        <div className="flex flex-col items-center justify-center content-between gap-4">
+        <div className="flex flex-col items-center justify-center gap-4 text-theme-primary">
           {link && (
             <Link className="cursor-pointer" href={link} target="_blank">
               <FaArrowUpRightFromSquare />

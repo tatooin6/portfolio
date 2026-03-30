@@ -15,28 +15,28 @@ export default function Home() {
     : [];
 
   return (
-    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-[#c0caf5]">
-      <div className="z-10 w-full max-w-4xl flex flex-col items-center gap-8">
+    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-theme-text">
+      <div className="z-10 flex w-full max-w-4xl flex-col items-center gap-8">
         <div className="space-y-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2ac3de]">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-theme-secondary">
             Hi there
           </p>
-          <h2 className="text-4xl font-bold text-[#bb9af7]">
+          <h2 className="text-4xl font-bold text-theme-primary">
             I&apos;m Tato - Fullstack Web Developer & Creative Mind
           </h2>
           <div className="flex justify-center">
             <ProfilePicture profiles={profiles} />
           </div>
-          <p className="text-lg leading-relaxed text-[#c0caf5]">
+          <p className="text-lg leading-relaxed text-theme-text">
             Full-stack developer crafting  scalable and
             meaningful web development projects. From backend logic to frontend
             polish, 
             {" "}
-            <strong className="text-[#9ece6a]">
+            <strong className="text-theme-accent">
               I build modern web solutions with clean code, smart architecture, and a creative edge.
             </strong>{" "}
           </p>
-          <p>
+          <p className="text-theme-muted">
             Feel free to download my CV below and explore more on this web site about who I am, what I do, and
             how we could work together.
           </p>

@@ -70,14 +70,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
   return (
     <form
       aria-label="Contact form"
-      className="w-full max-w-3xl space-y-6 rounded-3xl border border-[#7aa2f7]/50 bg-[#1f2335]/80 p-8 shadow-2xl shadow-[#1a1b26]"
+      className="w-full max-w-3xl space-y-6 rounded-3xl border border-theme-border/50 bg-theme-surface/90 p-8 shadow-2xl shadow-theme-contrast/20"
       onSubmit={sendEmail}
       ref={form}
     >
       <div className="space-y-2">
         <label
           htmlFor="user_name"
-          className="block text-xs font-semibold uppercase tracking-[0.3em] text-[#7aa2f7]"
+          className="block text-xs font-semibold uppercase tracking-[0.3em] text-theme-border"
         >
           Full Name
         </label>
@@ -88,14 +88,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
           required
           autoComplete="name"
           placeholder="Your Full Name"
-          className="w-full rounded-2xl border border-[#7aa2f7]/60 bg-transparent px-4 py-3 text-[#c0caf5] placeholder:text-[#7aa2f7]/60 focus:border-[#bb9af7] focus:outline-none focus:ring-2 focus:ring-[#bb9af7]/80 transition"
+          className="w-full rounded-2xl border border-theme-border/60 bg-transparent px-4 py-3 text-theme-text placeholder:text-theme-border/60 transition focus:border-theme-primary focus:outline-none focus:ring-2 focus:ring-theme-primary/80"
         />
       </div>
 
       <div className="space-y-2">
         <label
           htmlFor="user_email"
-          className="block text-xs font-semibold uppercase tracking-[0.3em] text-[#7aa2f7]"
+          className="block text-xs font-semibold uppercase tracking-[0.3em] text-theme-border"
         >
           Email Address
         </label>
@@ -106,14 +106,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
           required
           autoComplete="email"
           placeholder="name@email.com"
-          className="w-full rounded-2xl border border-[#7aa2f7]/60 bg-transparent px-4 py-3 text-[#c0caf5] placeholder:text-[#7aa2f7]/60 focus:border-[#bb9af7] focus:outline-none focus:ring-2 focus:ring-[#bb9af7]/80 transition"
+          className="w-full rounded-2xl border border-theme-border/60 bg-transparent px-4 py-3 text-theme-text placeholder:text-theme-border/60 transition focus:border-theme-primary focus:outline-none focus:ring-2 focus:ring-theme-primary/80"
         />
       </div>
 
       <div className="space-y-2">
         <label
           htmlFor="message"
-          className="block text-xs font-semibold uppercase tracking-[0.3em] text-[#7aa2f7]"
+          className="block text-xs font-semibold uppercase tracking-[0.3em] text-theme-border"
         >
           Message
         </label>
@@ -123,13 +123,13 @@ const ContactForm: React.FC<ContactFormProps> = ({
           rows={6}
           required
           placeholder="How can I help you? What are you looking to collaborate on?"
-          className="w-full resize-none rounded-2xl border border-[#7aa2f7]/60 bg-transparent px-4 py-3 text-[#c0caf5] placeholder:text-[#7aa2f7]/60 focus:border-[#bb9af7] focus:outline-none focus:ring-2 focus:ring-[#bb9af7]/80 transition"
+          className="w-full resize-none rounded-2xl border border-theme-border/60 bg-transparent px-4 py-3 text-theme-text placeholder:text-theme-border/60 transition focus:border-theme-primary focus:outline-none focus:ring-2 focus:ring-theme-primary/80"
         />
       </div>
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-2xl bg-[#7aa2f7] px-6 py-3 text-base font-semibold text-[#1a1b26] transition hover:bg-[#9ece6a] focus:outline-none focus:ring-2 focus:ring-[#7aa2f7]/80 focus:ring-offset-2 focus:ring-offset-[#1a1b26]"
+        className="inline-flex w-full items-center justify-center rounded-2xl bg-theme-border px-6 py-3 text-base font-semibold text-theme-contrast transition hover:bg-theme-accent focus:outline-none focus:ring-2 focus:ring-theme-border/80 focus:ring-offset-2 focus:ring-offset-theme-surface"
       >
         Send Message
       </button>

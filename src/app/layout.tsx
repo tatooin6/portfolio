@@ -18,11 +18,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                const storedTheme = localStorage.getItem("theme");
+                const isDark = storedTheme
+                  ? storedTheme === "dark"
+                  : window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.classList.toggle("dark", isDark);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${inter.className} dark flex flex-col min-h-screen bg-[#0b1120] text-slate-100 antialiased`}
+        className={`${inter.className} flex min-h-screen flex-col bg-theme-bg text-theme-text antialiased transition-colors`}
       >
-        <div className="dark:bg-[#24283b] flex flex-col flex-grow">
+        <div className="flex flex-grow flex-col bg-theme-surface/70 transition-colors">
           <Navbar />
           <main className="flex-grow px-2 md:px-0">{children}</main>
           <Footer />

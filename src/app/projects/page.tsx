@@ -19,19 +19,19 @@ const listItems: listItemsProps[] = projectData.map((item) => ({
 
 const page = () => {
   return (
-    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-[#c0caf5]">
-      <div className="w-full max-w-4xl flex flex-col gap-8">
+    <section className="flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-theme-text">
+      <div className="flex w-full max-w-4xl flex-col gap-8">
         <div className="space-y-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2ac3de]">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-theme-secondary">
             What I&apos;ve built
           </p>
-          <h2 className="text-4xl font-bold text-[#bb9af7]">
+          <h2 className="text-4xl font-bold text-theme-primary">
             Projects that solve problems (and some that scratch itches)
           </h2>
-          <p className="text-lg leading-relaxed text-[#c0caf5]">
+          <p className="text-lg leading-relaxed text-theme-text">
             Check out the solutions I&apos;ve developed some for fun, others for
             real-world impact. {" "}
-            <strong className="text-[#9ece6a]">
+            <strong className="text-theme-accent">
               Each project in this list challenged me, taught me, and sometimes
               frustrated me
             </strong>{" "}
@@ -46,7 +46,7 @@ const page = () => {
           </div>
         ) : (
           <div className="text-center space-y-2">
-            <span className="text-[#2ac3de] text-xl">
+            <span className="text-xl text-theme-secondary">
               Project loading issue.
             </span>
             <p>
@@ -54,7 +54,7 @@ const page = () => {
               <Link
                 href={"https://github.com/tatooin6?tab=repositories"}
                 target="_blank"
-                className="text-[#bb9af7]"
+                className="text-theme-primary"
               >
                 GitHub repository.
               </Link>

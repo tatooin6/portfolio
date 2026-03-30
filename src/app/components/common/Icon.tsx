@@ -7,9 +7,9 @@ interface IconProps {
 
 const Icon = ({icon: IconComponent, description}: IconProps) => {
   return (
-    <div className="relative group">
+    <div className="relative group text-theme-primary">
         <IconComponent className='text-5xl' />
-        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block text-xs bg-gray-700 text-white rounded-md px-2 py-1">
+        <span className="absolute bottom-full left-1/2 mb-2 hidden -translate-x-1/2 rounded-md bg-theme-text px-2 py-1 text-xs text-theme-contrast group-hover:block">
          { description }
         </span>
     </div>
