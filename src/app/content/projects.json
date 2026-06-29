@@ -3,7 +3,13 @@
     "name": "ServiDesk",
     "date": "2020-09-20",
     "tagline": "A useful desktop support platform for small businesses",
-    "technologies": ["NodeJS", "Socket.io", "Javascript", "HTML", "CSS"],
+    "technologies": [
+      "NodeJS",
+      "Socket.io",
+      "Javascript",
+      "HTML",
+      "CSS"
+    ],
     "img": "A.png",
     "link": "",
     "repo": "https://github.com/tatooin6/socket-colas"
@@ -12,7 +18,13 @@
     "name": "Resume Optimizer",
     "date": "2025-02-27",
     "tagline": "This project allows to optimize resumes based on a job description using AI.",
-    "technologies": ["Python", "FastApi", "Typescript", "ReactJS", "GenAI"],
+    "technologies": [
+      "Python",
+      "FastApi",
+      "Typescript",
+      "ReactJS",
+      "GenAI"
+    ],
     "img": "B.png",
     "link": "",
     "repo": "https://github.com/tatooin6/resume_optimization"
@@ -21,9 +33,26 @@
     "name": "Jour Buddy",
     "date": "2025-04-08",
     "tagline": "Spark Ideas with AI: With a topic instantly get title and discussion angle suggestions to kickstart content.",
-    "technologies": ["ReactJS", "Node.js", "GenAI", "TypeScript"],
+    "technologies": [
+      "ReactJS",
+      "Node.js",
+      "GenAI",
+      "TypeScript"
+    ],
     "img": "C.png",
     "link": "",
     "repo": "https://github.com/tatooin6/content-suggestions"
+  },
+  {
+    "name": "Papelitos",
+    "date": "2026-05-20",
+    "tagline": "A project created to be able to randomly assign order to a group of participants with the option to include stragglers.",
+    "technologies": [
+      "ReactJS",
+      "TypeScript"
+    ],
+    "img": "D.png",
+    "link": "https://papers-pied.vercel.app/",
+    "repo": "https://github.com/tatooin6/papers"
   }
 ]
