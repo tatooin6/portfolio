@@ -7,8 +7,6 @@ export async function POST() {
     { status: 200 }
   );
 
-  console.log("logging out from api");
-
   response.cookies.set("admin_token", "", {
     httpOnly: true,
     expires: new Date(0),
