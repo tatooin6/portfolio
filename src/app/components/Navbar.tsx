@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IoMenu, IoClose } from "react-icons/io5";
 import ThemeSwitcher from "./common/ThemeSwitcher";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const navItems = {
   "/": {
@@ -14,7 +15,7 @@ const navItems = {
     name: "about",
   },
   "/blog": {
-   name: "blog",
+    name: "blog",
   },
   "/experience": {
     name: "experience",
@@ -30,6 +31,13 @@ const navItems = {
 const Navbar = () => {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = async (): Promise<void> => {
+    await fetch("/api/logout", { method: "POST" });
+    router.push("/");
+    router.refresh();
+  }
 
   return (
     <aside className="-ml-[8px] mb-1 tracking-tight">
@@ -45,18 +53,16 @@ const Navbar = () => {
                 <Link
                   key={path}
                   href={path}
-                  className={`relative m-1 flex align-middle px-2 py-1 transition-all ${
-                    isActive
-                      ? "text-theme-text"
-                      : "text-theme-muted hover:text-theme-primary"
-                  }`}
+                  className={`relative m-1 flex align-middle px-2 py-1 transition-all ${isActive
+                    ? "text-theme-text"
+                    : "text-theme-muted hover:text-theme-primary"
+                    }`}
                 >
                   <span
-                    className={`relative px-[1px] transition-all duration-300 ${
-                      isActive
-                        ? "rounded-sm bg-theme-accent text-theme-contrast"
-                        : "hover:bg-theme-panel hover:text-theme-accent"
-                    }`}
+                    className={`relative px-[1px] transition-all duration-300 ${isActive
+                      ? "rounded-sm bg-theme-accent text-theme-contrast"
+                      : "hover:bg-theme-panel hover:text-theme-accent"
+                      }`}
                   >
                     {name[0]}
                   </span>
@@ -65,7 +71,14 @@ const Navbar = () => {
               );
             })}
           </div>
-          <div className="flex flex-row items-center justify-end px-2">
+          <div className="flex flex-row items-center justify-between px-2">
+            <Link
+              href="/"
+              className="relative m-1 flex align-middle px-4 py-1 transition-all text-theme-accent"
+              onClick={handleLogout}
+            >
+              Logout
+            </Link>
             <ThemeSwitcher />
           </div>
         </nav>
@@ -113,16 +126,20 @@ const Navbar = () => {
                   key={path}
                   href={path}
                   onClick={() => setDrawerOpen(false)}
-                  className={`block py-2 px-3 rounded ${
-                    isActive
-                      ? "bg-theme-accent text-theme-contrast"
-                      : "text-theme-primary hover:bg-theme-panel"
-                  }`}
+                  className={`block py-2 px-3 rounded ${isActive
+                    ? "bg-theme-accent text-theme-contrast"
+                    : "text-theme-primary hover:bg-theme-panel"
+                    }`}
                 >
                   {name}
                 </Link>
               );
             })}
+            <Link
+              href="/"
+              className="relative m-1 flex align-middle px-2 py-1 transition-all text-theme-accent">
+              Logout
+            </Link>
           </nav>
         </div>
       </div>
