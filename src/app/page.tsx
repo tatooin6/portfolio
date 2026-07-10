@@ -7,11 +7,11 @@ export default function Home() {
   const profilesDir = path.join(process.cwd(), "public", "images", "profiles");
   const profiles = fs.existsSync(profilesDir)
     ? fs
-        .readdirSync(profilesDir)
-        .filter((fileName) =>
-          fs.statSync(path.join(profilesDir, fileName)).isFile()
-        )
-        .map((fileName) => `/images/profiles/${fileName}`)
+      .readdirSync(profilesDir)
+      .filter((fileName) =>
+        fs.statSync(path.join(profilesDir, fileName)).isFile()
+      )
+      .map((fileName) => `/images/profiles/${fileName}`)
     : [];
 
   return (
@@ -22,7 +22,7 @@ export default function Home() {
             Hi there
           </p>
           <h2 className="text-4xl font-bold text-theme-primary">
-            I&apos;m Tato - Fullstack Web Developer & Creative Mind
+            I&apos;m Tato - Fullstack Web Developer
           </h2>
           <div className="flex justify-center">
             <ProfilePicture profiles={profiles} />
@@ -30,7 +30,7 @@ export default function Home() {
           <p className="text-lg leading-relaxed text-theme-text">
             Full-stack developer crafting  scalable and
             meaningful web development projects. From backend logic to frontend
-            polish, 
+            polish,
             {" "}
             <strong className="text-theme-accent">
               I build modern web solutions with clean code, smart architecture, and a creative edge.
