@@ -74,6 +74,25 @@ const NavbarClient = ({ isLoggedIn }: NavbarClientProps) => {
                 </Link>
               );
             })}
+            {isLoggedIn && (
+              <Link
+                href="/admin"
+                className={`relative m-1 flex align-middle px-2 py-1 transition-all ${pathname === "/admin"
+                  ? "text-theme-text"
+                  : "text-theme-muted hover:text-theme-primary"
+                  }`}
+              >
+                <span
+                  className={`relative px-[1px] transition-all duration-300 ${pathname === "/admin"
+                    ? "rounded-sm bg-theme-secondary text-theme-contrast"
+                    : "hover:bg-theme-panel hover:text-theme-accent"
+                    }`}
+                >
+                  a
+                </span>
+                dmin
+              </Link>
+            )}
           </div>
           <div className="flex flex-row items-center justify-between px-2">
             {isLoggedIn && (
