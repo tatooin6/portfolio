@@ -1,6 +1,7 @@
 import { verifyAdminToken } from "@/lib/auth";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import AdminContentManager from "./components/AdminContentManager";
 
 
 const AdminPage = async () => {
@@ -17,9 +18,12 @@ const AdminPage = async () => {
   if (!payload) redirect("/login");
 
   return (
-    <main className="p-6">
-      <h1 className="text-3xl font-bold">Admin Panel</h1>
-      <p className="mt-2">Welcome back sir.</p>
+    <main className="mx-auto w-full max-w-6xl px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-theme-text">Admin Panel</h1>
+        <p className="mt-2 text-theme-muted">Manage posts, content files, and CV uploads.</p>
+      </div>
+      <AdminContentManager />
     </main>
   )
 }
