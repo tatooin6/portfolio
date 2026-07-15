@@ -35,3 +35,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# admin-editable content
+/src/app/content/posts/
+/src/app/content/experience.json
+/src/app/content/projects.json
+/public/CV-AntonioPantoja_ENG.pdf
+/public/CV-AntonioPantoja_ESP.pdf

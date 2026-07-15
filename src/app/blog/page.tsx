@@ -14,13 +14,13 @@ const Page = () => {
           </h2>
           <p className="text-lg leading-relaxed text-theme-text">
             This blog is my playground for thoughts. Expect technical deep
-            dives, insights from job interviews, coding lessons, and maybe a
-            stand-up-worthy joke or two.{" "}
+            dives, insights from job interviews and coding lessons.
+            {" "}
             <strong className="text-theme-accent">
               I write to teach, to remember, and document.
             </strong>
             {" "}Stick around, you might learn something useful or at least have
-            a laugh.
+            fun learning.
           </p>
         </div>
 
